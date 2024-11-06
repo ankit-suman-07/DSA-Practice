@@ -1,0 +1,2 @@
+## About this repository
+This is a practice repository for DSA problems from LeetCode and other sources. Along with codes, I will also try to provide approach and detailed explanation for each solutions.

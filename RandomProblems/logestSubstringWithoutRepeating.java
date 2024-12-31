@@ -57,3 +57,23 @@ public int lengthOfLongestSubstring(String s) {
         }
         return max;
     }
+
+// Efficient:
+public int lengthOfLongestSubstring(String s) {
+        int max = 0;
+        int start = 0;
+
+        boolean[] hset = new boolean[128];
+
+        for (int end = 0; end < s.length(); end++) {
+            char currentChar = s.charAt(end);
+
+            while (hset[currentChar]) {
+                hset[s.charAt(start)] = false;
+                start++;
+            }
+            hset[currentChar] = true;
+            max = Math.max(max, end - start + 1);
+        }
+        return max;
+    }

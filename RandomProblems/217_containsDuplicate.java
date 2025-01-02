@@ -34,3 +34,13 @@ public boolean containsDuplicate(int[] nums) {
     }
 
 // Method 2:
+public boolean containsDuplicate(int[] nums) {
+    Set<Integer> hset = new HashSet<>();
+
+    for (int num : nums) {
+        if (!hset.add(num)) {
+            return true;
+        }
+    }
+    return false;
+}

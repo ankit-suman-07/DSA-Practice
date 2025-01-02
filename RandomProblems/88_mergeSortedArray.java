@@ -26,6 +26,24 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 
 // Method 1:
 public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int first = m - 1;
+        int second = n - 1;
+        int last = m + n - 1;
+
+        while (second >= 0) {
+            if (first >= 0 && nums1[first] > nums2[second]) {
+                nums1[last] = nums1[first];
+                first--;
+            } else {
+                nums1[last] = nums2[second];
+                second--;
+            }
+            last--;
+        }
+    }
+
+// Method 2:
+public void merge(int[] nums1, int m, int[] nums2, int n) {
         for(int i=0; i<n; i++) {
             nums1[m + i] = nums2[i];
         }   
